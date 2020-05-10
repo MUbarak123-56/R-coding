@@ -73,3 +73,5 @@ install.packages(  ## used to install packages from repos
   repos = "http://www.stats.bris.ac.uk/R/" 
 ) 
 nrow(installed.packages()) ## used for counting the number of packages in the libraries
+install.packages('CARS')
+library(CARS)
