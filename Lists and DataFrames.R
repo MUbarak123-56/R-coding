@@ -37,7 +37,7 @@ l[c("first", "second")]
 l[c(TRUE, TRUE, FALSE)] 
 l[[1]] ## how to call an element in a list
 l[['first']] ## how to call an element in a list
-
+l['first']
 is.list(l[1]) ## returns TRUE because the input is a list 
 is.list(l[[1]]) ## returns FALSE becaus the input is not a list
 
@@ -86,7 +86,7 @@ uk_bank_holidays_2013$Jan <- NULL
 uk_bank_holidays_2013$Feb <- NULL
 uk_bank_holidays_2013
 
-## Assigning certain elemets to NULL values
+## Assigning certain elements to NULL values
 uk_bank_holidays_2013["Aug"] <- list(NULL) 
 uk_bank_holidays_2013
 
@@ -157,7 +157,6 @@ beaver1['id'] <- 1
 beaver1
 beaver2['id'] <- 2
 beaver2
-merge(beaver1,beaver2, by = "id", all = TRUE)
 y <- rbind(beaver1, beaver2)
 y
 subset(y, activ > 0)
