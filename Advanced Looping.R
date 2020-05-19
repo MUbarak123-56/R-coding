@@ -2,8 +2,8 @@
 
 ### REPLICATE
 
-rep(runif(1), 5)
-replicate(5, runif(1))
+rep(runif(1), 5) 
+replicate(5, runif(1)) ## replicate is used to create a random set of values
 
 time_for_commute <- function() 
 { 
@@ -61,7 +61,6 @@ env$larry <- c("Really", "leery", "rarely", "Larry")
 eapply(env, length) 
 lapply(env, length) ## same
 
-install.packages("matlab") 
 library(matlab)
 (magic4 <- magic(4))
 rowSums(magic4) 
@@ -124,7 +123,6 @@ vectorized_baby_gender_report(genders)
 
 with(frogger_scores, tapply(score, player, mean)) ## tapply is a very great way to use split-combine-apply
 
-install.packages('plyr')
 library(plyr) 
 llply(prime_factors, unique) ## returns a list
 laply(prime_factors, length) ## returns an array
@@ -167,3 +165,24 @@ wayans <- list (
   Vonnie = list() 
 )
 vapply(wayans,length, numeric(1))
+
+## 2
+state.x77
+head(state.x77)
+str(state.x77)
+summary(state.x77)
+apply(state.x77,2,mean)
+apply(state.x77,2,sd)
+
+## 3
+commute_times <- replicate(1000, time_for_commute()) 
+commute_data <- data.frame(  
+  time = commute_times,  
+  mode = names(commute_times) 
+)
+ddply(  
+  commute_data,  
+  .(mode),  
+  summarize,  
+  Q3 = quantile(time,0.75)
+) 
