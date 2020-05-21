@@ -150,6 +150,8 @@ religions_long <- melt(ovm,  id.vars = "State",  measure.vars = c("Catholic", "P
 ggplot(religions_long, aes(State, value, fill = variable)) +  geom_bar(stat = "identity") +  coord_flip()
 ggplot(religions_long, aes(State, value, fill = variable)) +  geom_bar(stat = "identity", position = "dodge") +  coord_flip()
 
+install.packages('usethis')
+library(usethis)
 library(devtools) 
 ## install_github("rCharts", "ramnathv") 
 
@@ -157,6 +159,7 @@ library(devtools)
 
 ## 1
 with(obama_vs_mccain, cor(Unemployment, Obama))
+library(ggplot2)
 ggplot(obama_vs_mccain, aes(Unemployment,Obama)) + geom_point()
 
 ## 2

@@ -12,7 +12,7 @@ english_monarchs[multiple_kingdoms, c("name", "domain")]
 multiple_rulers <- str_detect(english_monarchs$name, ",|and") 
 english_monarchs$name[multiple_rulers & !is.na(multiple_rulers)]
 
-individual_rulers <- str_split(english_monarchs$name, ", | and ") ## str_split is used to split columns with the aid of a selected string
+individual_rulers <- str_split(english_monarchs$name, ", | and ") ## str_split is used to split a column with the aid of a selected string
 head(individual_rulers[sapply(individual_rulers, length) > 1])
 
 th <- c("th", "ð", "þ")
@@ -60,7 +60,7 @@ deer_endocranial_volume[has_all_measurements, ]
 
 na.omit(deer_endocranial_volume) ## na.omit is a simpler version 
 
-na.fail(deer_endocranial_volume) ## returns an error if it is a missing value
+na.fail(deer_endocranial_volume) ## returns an error if there is a missing value
 
 ## CONVERTING BETWEEN WIDE AND LONG FORM
 
